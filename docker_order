@@ -1,0 +1,14 @@
+docker images - показывает все образы
+docker ps -a -  показывает все запущенные контейнеры 
+		(-а значит, что показывает ещё спящие контейнеры)
+docker build -f Dockerfile -t docker_hello:latest . - собирает образ под
+			тегом docker_hello:latest (-f показывает путь к файлу)
+			. - это директория.	
+docker run --rm docker_hello:latest - запускает контейнер и удаляет его.
+
+/////////////////////////////////////////////////////////////////////////////
+push в репозиторий.
+меняем имя образа на имя репозитория из dockerhub
+docker tag docker_hello:latest garden001/rep:v1
+далее просто пушим: docker push garden001/rep:v1
+если запулить надо, то меняем push на pull.
